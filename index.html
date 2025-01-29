@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Skuju, magliette, shop, chaos, rebellion, memecoin">
+    <meta name="author" content="Ossas">
+    <title>Skuju T-Shirt - Official Merchandise</title>
+    <style>
+        :root {
+            --background: rgb(226, 191, 16);
+            --text: #282c34;
+            --text-accent: rgb(255, 72, 0);
+            --background-accent: rgb(238, 210, 68);
+            --footer: #181a1f;
+            --contrast: rgb(255, 72, 0);
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: var(--text-accent);
+            padding: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: var(--black);
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .product {
+            background-color: var(--background-accent);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            border-radius: 5px;
+            display: none; /* Nasconde tutte le immagini di default */
+        }
+
+        .product img.active {
+            display: block; /* Mostra solo l'immagine attiva */
+        }
+
+        .product h3 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: var(--text);
+        }
+
+        .product .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--contrast);
+            margin: 15px 0;
+        }
+
+        .product .email {
+            display: inline-block;
+            background-color: var(--text-accent);
+            color: var(--black);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: moveText 50s linear infinite;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            50% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .product .email:hover {
+            background-color: var(--contrast);
+            color: var(--background);
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: var(--footer);
+            color: var(--background);
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Stili per dispositivi mobili */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .product h3 {
+                font-size: 1.2rem;
+            }
+
+            .product .price {
+                font-size: 1rem;
+            }
+
+            .product .email {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+                animation: none; /* Rimuove l'animazione su dispositivi mobili */
+            }
+
+            .slider-controls {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .slider-controls button {
+                background-color: var(--text-accent);
+                color: var(--black);
+                border: none;
+                padding: 10px 15px;
+                margin: 0 5px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1rem;
+                transition: background-color 0.3s;
+            }
+
+            .slider-controls button:hover {
+                background-color: var(--contrast);
+            }
+        }
+
+        /* Stili per desktop */
+        @media (min-width: 769px) {
+            .slider {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .product img {
+                display: block; /* Mostra tutte le immagini */
+                margin: 10px;
+                max-width: 30%; /* Riduci la larghezza massima per adattare più immagini */
+            }
+
+            .slider-controls {
+                display: none; /* Nasconde i controlli dello slider */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Skuju T-Shirt - Unleash the Chaos!</h1>
+    </header>
+    <main>
+        <div class="product">
+            <h3>Exclusive Skuju T-Shirt</h3>
+            <div class="slider">
+                <img src="avanti.png" alt="Skuju T-Shirt Image 1" class="active">
+                <img src="retro (1).png" alt="Skuju T-Shirt Image 2">
+                <img src="destra.png" alt="Skuju T-Shirt Image 3">
+            </div>
+            <div class="slider-controls">
+                <button id="prevButton">❮</button>
+                <button id="nextButton">❯</button>
+            </div>
+            <p class="price">$29.99</p>
+            <a href="mailto:michele@famard.it" class="email">Write to Michele for buy: michele@famard.it</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Skuju Shop - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Script per lo slider delle immagini (solo su dispositivi mobili)
+        if (window.innerWidth <= 768) {
+            let currentImageIndex = 0;
+            const images = document.querySelectorAll('.product img');
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.classList.toggle('active', i === index);
+                });
+            }
+
+            function nextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                showImage(currentImageIndex);
+            }
+
+            function prevImage() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                showImage(currentImageIndex);
+            }
+
+            // Aggiungi event listener ai pulsanti
+            document.getElementById('nextButton').addEventListener('click', nextImage);
+            document.getElementById('prevButton').addEventListener('click', prevImage);
+
+            // Mostra la prima immagine al caricamento della pagina
+            showImage(currentImageIndex);
+        }
+    </script>
+</body>
+</html>
