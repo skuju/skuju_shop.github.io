@@ -64,20 +64,21 @@
             padding: 30px;
             text-align: center;
             width: 100%;
-            max-width: 800px; /* Updated for a better desktop view */
+            max-width: 800px;
             margin: 0 auto;
+            position: relative; /* For positioning arrows */
         }
 
         .product img {
             width: 100%;
-            max-width: 100%; /* Adjust for full-width images */
+            max-width: 100%;
             margin: 10px auto;
             border-radius: 5px;
-            display: none; /* Hide all images by default */
+            display: none;
         }
 
         .product img.active {
-            display: block; /* Show only the active image */
+            display: block;
         }
 
         .product h3 {
@@ -128,43 +129,33 @@
 
         /* Mobile Styles */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .product h3 {
-                font-size: 1.5rem;
-            }
-
-            .product .price {
-                font-size: 1.2rem;
-            }
-
-            .product .email {
-                font-size: 1rem;
-                padding: 10px 20px;
-            }
-
             .slider-controls {
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
+                position: relative;
                 margin-top: 10px;
+                z-index: 10;
             }
 
             .slider-controls button {
                 background-color: var(--text-accent);
                 color: var(--black);
                 border: none;
-                padding: 10px 15px;
-                margin: 0 5px;
-                border-radius: 5px;
+                padding: 10px;
+                margin: 0 10px;
+                border-radius: 50%;
                 cursor: pointer;
-                font-size: 1rem;
-                transition: background-color 0.3s;
+                font-size: 1.5rem;
+                transition: background-color 0.3s, transform 0.2s;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .slider-controls button:hover {
                 background-color: var(--contrast);
+                transform: scale(1.1);
             }
         }
 
@@ -178,31 +169,13 @@
             }
 
             .product img {
-                display: block; /* Show all images */
+                display: block;
                 margin: 10px;
-                max-width: 30%; /* Adjust image width for desktop */
+                max-width: 30%;
             }
 
             .slider-controls {
-                display: flex;
-                justify-content: center;
-                margin-top: 20px;
-            }
-
-            .slider-controls button {
-                background-color: var(--text-accent);
-                color: var(--black);
-                border: none;
-                padding: 12px 20px;
-                margin: 0 10px;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 1.2rem;
-                transition: background-color 0.3s;
-            }
-
-            .slider-controls button:hover {
-                background-color: var(--contrast);
+                display: none;
             }
         }
     </style>
@@ -219,7 +192,10 @@
                 <img src="retro (1).png" alt="Skuju T-Shirt Image 2">
                 <img src="destra.png" alt="Skuju T-Shirt Image 3">
             </div>
-           
+            <div class="slider-controls">
+                <button id="prevButton">❮</button>
+                <button id="nextButton">❯</button>
+            </div>
             <p class="price">$29.99</p>
             <a href="mailto:michele@famard.it" class="email">Write to Michele for buy: michele@famard.it</a>
         </div>
