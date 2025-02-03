@@ -8,12 +8,12 @@
     <title>Skuju T-Shirt - Official Merchandise</title>
     <style>
         :root {
-            --background: rgb(226, 191, 16);
-            --text: #282c34;
-            --text-accent: rgb(255, 72, 0);
-            --background-accent: rgb(238, 210, 68);
-            --footer: #181a1f;
-            --contrast: rgb(255, 72, 0);
+            --background: #1a1a1a;
+            --text: #ffffff;
+            --text-accent: #ff4800;
+            --background-accent: #2a2a2a;
+            --footer: #121212;
+            --contrast: #ff4800;
             --black: #000000;
         }
 
@@ -33,15 +33,17 @@
 
         header {
             background-color: var(--text-accent);
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
             text-transform: uppercase;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
 
         header h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--black);
             margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         main {
@@ -59,32 +61,34 @@
             background-color: var(--background-accent);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            overflow: hidden;
+            padding: 30px;
             text-align: center;
             width: 100%;
+            max-width: 800px; /* Updated for a better desktop view */
+            margin: 0 auto;
         }
 
         .product img {
             width: 100%;
-            max-width: 300px;
+            max-width: 100%; /* Adjust for full-width images */
             margin: 10px auto;
             border-radius: 5px;
-            display: none; /* Nasconde tutte le immagini di default */
+            display: none; /* Hide all images by default */
         }
 
         .product img.active {
-            display: block; /* Mostra solo l'immagine attiva */
+            display: block; /* Show only the active image */
         }
 
         .product h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin: 15px 0;
             color: var(--text);
+            text-transform: uppercase;
         }
 
         .product .price {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--contrast);
             margin: 15px 0;
@@ -94,65 +98,51 @@
             display: inline-block;
             background-color: var(--text-accent);
             color: var(--black);
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: bold;
             transition: background-color 0.3s, color 0.3s, transform 0.2s;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            animation: moveText 50s linear infinite;
-        }
-
-        @keyframes moveText {
-            0% {
-                transform: translateX(100%);
-            }
-            50% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(100%);
-            }
+            margin-top: 20px;
         }
 
         .product .email:hover {
             background-color: var(--contrast);
             color: var(--background);
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         footer {
             background-color: var(--footer);
-            color: var(--background);
+            color: var(--text);
             text-align: center;
             padding: 1rem;
-            font-size: 0.9rem;
-            width: 100%;
+            font-size: 1rem;
         }
 
         footer p {
             margin: 5px 0;
         }
 
-        /* Stili per dispositivi mobili */
+        /* Mobile Styles */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
 
             .product h3 {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
 
             .product .price {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             .product .email {
-                font-size: 0.9rem;
-                padding: 8px 16px;
-                animation: none; /* Rimuove l'animazione su dispositivi mobili */
+                font-size: 1rem;
+                padding: 10px 20px;
             }
 
             .slider-controls {
@@ -178,22 +168,41 @@
             }
         }
 
-        /* Stili per desktop */
+        /* Desktop Styles */
         @media (min-width: 769px) {
             .slider {
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
+                margin-bottom: 20px;
             }
 
             .product img {
-                display: block; /* Mostra tutte le immagini */
+                display: block; /* Show all images */
                 margin: 10px;
-                max-width: 30%; /* Riduci la larghezza massima per adattare più immagini */
+                max-width: 30%; /* Adjust image width for desktop */
             }
 
             .slider-controls {
-                display: none; /* Nasconde i controlli dello slider */
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .slider-controls button {
+                background-color: var(--text-accent);
+                color: var(--black);
+                border: none;
+                padding: 12px 20px;
+                margin: 0 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1.2rem;
+                transition: background-color 0.3s;
+            }
+
+            .slider-controls button:hover {
+                background-color: var(--contrast);
             }
         }
     </style>
@@ -210,10 +219,7 @@
                 <img src="retro (1).png" alt="Skuju T-Shirt Image 2">
                 <img src="destra.png" alt="Skuju T-Shirt Image 3">
             </div>
-            <div class="slider-controls">
-                <button id="prevButton">❮</button>
-                <button id="nextButton">❯</button>
-            </div>
+           
             <p class="price">$29.99</p>
             <a href="mailto:michele@famard.it" class="email">Write to Michele for buy: michele@famard.it</a>
         </div>
@@ -223,7 +229,7 @@
     </footer>
 
     <script>
-        // Script per lo slider delle immagini (solo su dispositivi mobili)
+        // Image slider script (mobile only)
         if (window.innerWidth <= 768) {
             let currentImageIndex = 0;
             const images = document.querySelectorAll('.product img');
@@ -244,11 +250,11 @@
                 showImage(currentImageIndex);
             }
 
-            // Aggiungi event listener ai pulsanti
+            // Add event listeners to buttons
             document.getElementById('nextButton').addEventListener('click', nextImage);
             document.getElementById('prevButton').addEventListener('click', prevImage);
 
-            // Mostra la prima immagine al caricamento della pagina
+            // Show the first image on page load
             showImage(currentImageIndex);
         }
     </script>
