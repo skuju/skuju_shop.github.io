@@ -93,6 +93,37 @@
             font-weight: bold;
             color: var(--contrast);
             margin: 15px 0;
+            position: relative;
+        }
+
+        .product .price .original {
+            text-decoration: line-through;
+            color: red;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .product .price .original::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+            transform: translateY(-50%);
+        }
+
+        .product .price .discounted {
+            color: var(--contrast);
+            font-size: 2rem;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         .product .email {
@@ -196,7 +227,10 @@
                 <button id="prevButton">❮</button>
                 <button id="nextButton">❯</button>
             </div>
-            <p class="price">$29.99</p>
+            <p class="price">
+                <span class="original">$29.99</span>
+                <span class="discounted">$14.99</span>
+            </p>
             <a href="mailto:michele@famard.it" class="email">Write to Michele for buy: michele@famard.it</a>
         </div>
     </main>
@@ -233,6 +267,18 @@
             // Show the first image on page load
             showImage(currentImageIndex);
         }
+
+        // Dynamic price calculation
+        const originalPriceElement = document.querySelector('.price .original');
+        const discountedPriceElement = document.querySelector('.price .discounted');
+
+        const originalPrice = 29.99;
+        const discountPercentage = 50;
+
+        const discountedPrice = (originalPrice * (100 - discountPercentage)) / 100;
+
+        originalPriceElement.textContent = `$${originalPrice.toFixed(2)}`;
+        discountedPriceElement.textContent = `$${discountedPrice.toFixed(2)}`;
     </script>
 </body>
 </html>
