@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Skuju, magliette, shop, chaos, rebellion, memecoin">
-    <meta name="author" content="Ossas">
+    <meta name="description" content="Shop the exclusive Skuju T-Shirt, available now at a discounted price. Unleash the chaos with our high-quality merchandise!">
     <title>Skuju T-Shirt - Official Merchandise</title>
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -23,18 +23,22 @@
             --black: #000000;
         }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             line-height: 1.5;
             color: var(--text);
             background-color: var(--background);
-            margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
+            align-items: center;
             min-height: 100vh;
-            justify-content: space-between;
         }
 
         header {
@@ -43,6 +47,7 @@
             text-align: center;
             text-transform: uppercase;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
         }
 
         header h1 {
@@ -54,13 +59,14 @@
 
         main {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            flex: 1;
-            max-width: 100%;
+            width: 100%;
+            max-width: 1200px;
             margin: 20px auto;
-            padding: 0 20px;
+            padding: 20px;
             text-align: center;
+            flex: 1;
         }
 
         .product {
@@ -72,7 +78,6 @@
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            position: relative; /* For positioning arrows */
         }
 
         .product img {
@@ -158,65 +163,13 @@
             text-align: center;
             padding: 1rem;
             font-size: 1rem;
+            width: 100%;
         }
 
         footer p {
             margin: 5px 0;
         }
 
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .slider-controls {
-                display: flex;
-                justify-content: space-between;
-                position: relative;
-                margin-top: 10px;
-                z-index: 10;
-            }
-
-            .slider-controls button {
-                background-color: var(--text-accent);
-                color: var(--black);
-                border: none;
-                padding: 10px;
-                margin: 0 10px;
-                border-radius: 50%;
-                cursor: pointer;
-                font-size: 1.5rem;
-                transition: background-color 0.3s, transform 0.2s;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .slider-controls button:hover {
-                background-color: var(--contrast);
-                transform: scale(1.1);
-            }
-        }
-
-        /* Desktop Styles */
-        @media (min-width: 769px) {
-            .slider {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-
-            .product img {
-                display: block;
-                margin: 10px;
-                max-width: 30%;
-            }
-
-            .slider-controls {
-                display: none;
-            }
-        }
-
-        /* Sticker Message Styles */
         .sticker-message {
             background-color: var(--text-accent);
             color: var(--black);
@@ -232,6 +185,141 @@
         .sticker-message p {
             margin: 0;
         }
+
+        .product-description, .reviews, .faq, .cta, .image-gallery, .payment-options, .promo-banner {
+            background-color: var(--background-accent);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .product-description h3, .reviews h3, .faq h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text);
+            text-transform: uppercase;
+        }
+
+        .product-description p, .reviews p, .faq p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .faq-item h4 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: var(--text);
+        }
+
+        .cta {
+            text-align: center;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        #countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--contrast);
+            margin-bottom: 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 30%;
+            margin: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .payment-options {
+            text-align: center;
+        }
+
+        .payment-options img {
+            width: 50px;
+            margin: 10px;
+        }
+
+        .promo-banner {
+            background-color: var(--text-accent);
+            color: var(--black);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+        }
+
+        .social-links, .footer-links {
+            margin: 10px 0;
+        }
+
+        .social-links a, .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+
+        .social-links a:hover, .footer-links a:hover {
+            color: var(--contrast);
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .slider-controls button {
+            background-color: var(--text-accent);
+            color: var(--black);
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .slider-controls button:hover {
+            background-color: var(--contrast);
+            color: var(--background);
+        }
+
+        @media (min-width: 769px) {
+            .slider {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .slider img {
+                width: 45%;
+                display: block;
+            }
+
+            .slider-controls {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -239,12 +327,14 @@
         <h1>Skuju T-Shirt - Unleash the Chaos!</h1>
     </header>
     <main>
+        <div class="promo-banner">
+            <p>🎉 Free shipping on all orders over $50! 🎉</p>
+        </div>
         <div class="product">
             <h3>Exclusive Skuju T-Shirt</h3>
             <div class="slider">
                 <img src="avanti.png" alt="Skuju T-Shirt Image 1" class="active">
                 <img src="retro (1).png" alt="Skuju T-Shirt Image 2">
-                
             </div>
             <div class="slider-controls">
                 <button id="prevButton">❮</button>
@@ -254,15 +344,52 @@
                 <span class="original">$29.99</span>
                 <span class="discounted">$14.99</span>
             </p>
-            <!-- Messaggio sticker -->
             <div class="sticker-message">
                 <p>🎉 For every shirt you buy, you get two Skuju stickers to spread the chaos! 🎉</p>
             </div>
             <a href="mailto:michele@famard.it" class="email">Write to Michele for buy: michele@famard.it</a>
         </div>
+        <div class="cta">
+            <p>Hurry up! Offer ends in:</p>
+            <div id="countdown">
+                <span id="hours">02</span>:<span id="minutes">30</span>:<span id="seconds">45</span>
+            </div>
+        </div>
+        <div class="product-description">
+            <h3>About the Skuju T-Shirt</h3>
+            <p>Our exclusive Skuju T-Shirt is made from 100% organic cotton, ensuring comfort and durability. The design features the iconic Skuju logo, symbolizing rebellion and chaos. Available in sizes S to XXL.</p>
+            <p>Each purchase comes with two limited edition Skuju stickers, perfect for spreading the chaos wherever you go!</p>
+        </div>
+        
+        <div class="reviews">
+            <h3>Customer Reviews</h3>
+            <div class="review">
+                <p>⭐⭐⭐⭐⭐ "Love the design and the quality! Highly recommend!" - Alexander_guru</p>
+            </div>
+            <div class="review">
+                <p>⭐⭐⭐⭐ "Great shirt, fits perfectly. The stickers are a nice bonus!" - Jamie10</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <h4>What sizes are available?</h4>
+                <p>Our Skuju T-Shirt for now is available only in sizes M.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How long does shipping take?</h4>
+                <p>Shipping usually takes 3-5 business days within the Europe.</p>
+            </div>
+        </div>
+       
     </main>
     <footer>
         <p>&copy; 2025 Skuju Shop - All Rights Reserved</p>
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
     </footer>
 
     <script>
@@ -295,17 +422,32 @@
             showImage(currentImageIndex);
         }
 
-        // Dynamic price calculation
-        const originalPriceElement = document.querySelector('.price .original');
-        const discountedPriceElement = document.querySelector('.price .discounted');
+        // Countdown timer
+        const countdownElement = document.getElementById('countdown');
+        const hoursElement = document.getElementById('hours');
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
 
-        const originalPrice = 29.99;
-        const discountPercentage = 50;
+        let timeLeft = 2 * 60 * 60 + 30 * 60 + 45; // 2 ore, 30 minuti, 45 secondi
 
-        const discountedPrice = (originalPrice * (100 - discountPercentage)) / 100;
+        function updateCountdown() {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
 
-        originalPriceElement.textContent = `$${originalPrice.toFixed(2)}`;
-        discountedPriceElement.textContent = `$${discountedPrice.toFixed(2)}`;
+            hoursElement.textContent = String(hours).padStart(2, '0');
+            minutesElement.textContent = String(minutes).padStart(2, '0');
+            secondsElement.textContent = String(seconds).padStart(2, '0');
+
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                // Resetta il timer quando raggiunge lo zero
+                timeLeft = 2 * 60 * 60 + 30 * 60 + 45; // Ricomincia da 2 ore, 30 minuti, 45 secondi
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
