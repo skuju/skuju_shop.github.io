@@ -215,6 +215,23 @@
                 display: none;
             }
         }
+
+        /* Sticker Message Styles */
+        .sticker-message {
+            background-color: var(--text-accent);
+            color: var(--black);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .sticker-message p {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -227,7 +244,7 @@
             <div class="slider">
                 <img src="avanti.png" alt="Skuju T-Shirt Image 1" class="active">
                 <img src="retro (1).png" alt="Skuju T-Shirt Image 2">
-                <img src="destra.png" alt="Skuju T-Shirt Image 3">
+                
             </div>
             <div class="slider-controls">
                 <button id="prevButton">❮</button>
@@ -237,6 +254,10 @@
                 <span class="original">$29.99</span>
                 <span class="discounted">$14.99</span>
             </p>
+            <!-- Messaggio sticker -->
+            <div class="sticker-message">
+                <p>🎉 For every shirt you buy, you get two Skuju stickers to spread the chaos! 🎉</p>
+            </div>
             <a href="mailto:michele@famard.it" class="email">Write to Michele for buy: michele@famard.it</a>
         </div>
     </main>
