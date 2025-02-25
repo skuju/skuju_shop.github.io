@@ -180,6 +180,12 @@
             font-size: 1.1rem;
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .sticker-message p {
